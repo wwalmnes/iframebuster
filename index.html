@@ -72,12 +72,20 @@
 
             $('.generateBtn').on('click', function (e) {
                 e.preventDefault();
-                var now = new Date().getTime();
-                var frameID = generateHash(now.toString()).toString();
-                var frameEl = 'frame' + frameID;
-                var scriptEl = 'bootstrapScript' + frameID;
+                var now = new Date().getTime(),
+                    frameID = generateHash(now.toString()).toString(),
+                    frameEl = 'frame' + frameID,
+                    scriptEl = 'bootstrapScript' + frameID,
+                    frameWidth = document.getElementById('inputWidth').value,
+                    frameHeight = document.getElementById('inputHeight').value;
+                    frameWidth = frameWidth ? frameWidth : '100%';
+                    frameHeight = frameHeight ? frameHeight : '250px';
+
                 // Show the iframe they should use.
-                var resultVal = '<iframe id="' + frameEl + '" scrolling="no" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" src="about:self" style="border: 0px;"><\/iframe>';
+                var resultVal = '<iframe id="' + frameEl + '" scrolling="no" frameborder="0"' +
+                'width="' + frameWidth + '" height="' + frameHeight + '" allowfullscreen="true"' +
+                'mozallowfullscreen="true" webkitallowfullscreen="true" src="about:self"' +
+                'style="border: 0px;"><\/iframe>';
                 // Show the script they should use.
                 resultVal += '\n\n<script type="text/javascript">';
                 resultVal += '\nvar ' + frameEl + ' = document.getElementById("' + frameEl + '");';
@@ -97,7 +105,6 @@
                 for (i = 0, len = toBeHashed.length; i < len; i++) {
                     chr   = toBeHashed.charCodeAt(i);
                     hash  = (hash*37) + chr;
-                    // Convert to "32bit integer".
                     hash |= 0;
                 }
 
