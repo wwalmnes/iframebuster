@@ -5,63 +5,58 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <style type="text/css">
-
-    </style>
 </head>
 <body>
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1>IFRAME-BUSTER</h1>
+            <div class="col s12">
+                <h1 class="red-text text-lighten-2">IFRAME <span class="buster red-text text-lighten-1">BUSTER</span></h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="inputWidth" class="col-sm-2 control-label">Width</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputWidth" placeholder="Default: 100%">
-                        </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="inputWidth" type="text" class="validate" >
+                        <label for="inputWidth">Width</label>
                     </div>
-                    <div class="form-group">
-                        <label for="inputHeight" class="col-sm-2 control-label">Height</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputHeight" placeholder="Default: 250">
-                        </div>
+                    <div class="input-field col s6">
+                        <input id="inputHeight" type="text" class="validate" >
+                        <label for="inputHeight">Height</label>
                     </div>
-
-                    <div class="form-group">
-                        <label for="inputScriptSrc" class="col-sm-2 control-label">Script src</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputScriptSrc" placeholder="http://link.to.your/bootstrapper.script.js">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="inputScriptSrc" type="email" class="validate" >
+                        <label for="inputScriptSrc">Script src</label>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button class="generateBtn" type="submit" class="btn btn-default">Generate</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <button class="generateBtn btn waves-effect waves-light" type="submit" name="action">
+                            Generate
+                            <i class="mdi-content-send right"></i>
+                        </button>
                     </div>
-                    <!-- <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Sign in</button>
-                        </div>
-                    </div> -->
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
 
-
         <div class="row">
-            <div class="col-lg-12">
-                <textarea id="result" readonly="true" cols="65" rows="35" id="container" style="width: 850px;"></textarea>
+            <div class="col s12">
+                <h3 class="red-text text-lighten-2">Generated code:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="result" readonly="true" cols="55" rows="35" class="materialize-textarea" style="height: 300px;"></textarea>
+                <label for="result">Code to be generated:</label>
             </div>
         </div>
     </div>
@@ -112,15 +107,8 @@
             }
 
         });
-        // document.querySelector('iframe').src = iframeUrl;
-        // var testframe = document.getElementById('testframe');
-        // var testDocument = testframe.contentDocument || testframe.contentWindow;
-        // var bootstrapScript = document.createElement('script');
-        // bootstrapScript.src = 'http://10.200.204.75:9090/scripts/injector.js';
-        // testDocument.body.appendChild(bootstrapScript);
-
-
-
     </script>
+
+    <script type="text/javascript" src="js/materialize.js"></script>
 </body>
 </html>
